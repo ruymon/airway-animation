@@ -1,7 +1,7 @@
 const defaultConfig = {
   height: 130,
   lazy: true,
-  background: '',
+  backgroundColor: '',
   resizable: false,
   colorFromLeft: 'blue',
   colorFromRight: 'red',
