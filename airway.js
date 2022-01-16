@@ -1,5 +1,5 @@
 const defaultConfig = {
-  height: '130',
+  height: 130,
   lazy: true,
   background: '',
   resizable: false,
