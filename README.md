@@ -1,4 +1,4 @@
-# Airway Animation ✈
+# Airway Animation ✈ (Vanila JS )
 
 A concept to add airplanes in a airway using Javascript and CSS Animations. Currently this is a a HTML only concept. In the near future we will add a Lib to abstract this and provide a way to use it in a React App.
 
