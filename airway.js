@@ -20,7 +20,7 @@ class Airway {
   interval = null;
 
   constructor(container, config) {
-    this.container = document.querySelector(container);
+    this.setContainer(container);
     this.config = { ...defaultConfig, ...config };
   }
 
@@ -43,6 +43,10 @@ class Airway {
   }
 
   setContainer(container) {
+    if (typeof container === 'string') {
+      return (this.container = document.querySelector(container));
+    }
+
     this.container = document.querySelector(container);
   }
 
