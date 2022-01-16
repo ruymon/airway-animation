@@ -27,19 +27,17 @@ class Airway {
   log(msg, type) {
     if (!this.config.log) return;
 
-    switch (type) {
-      case 'info':
-        console.info(msg);
-        break;
-      case 'warn':
-        console.warn(msg);
-        break;
-      case 'error':
-        console.error(msg);
-        break;
-      default:
-        console.log(msg);
+    const types = {
+      'info': () => console.info(msg),
+      'warn': () => console.warn(msg),
+      'error': () => console.log(msg)
     }
+
+    if (types[type]) {
+      return types[type]();
+    }
+
+    console.log(msg);
   }
 
   setContainer(container) {
