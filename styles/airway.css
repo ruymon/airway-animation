@@ -8,6 +8,6 @@
 }
 
 .airplaneLine {
-    width: calc(100vw / 4);
-    height: 6px;
+  width: calc(100vw / 4);
+  height: 6px;
 }
