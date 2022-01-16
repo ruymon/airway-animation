@@ -15,7 +15,11 @@
 }
 
 .airplaneRight .airplaneLine {
-  background: linear-gradient(270deg, var(--airplane-right-fill-color) 0%, rgba(163, 57, 227, 0) 100%);
+  background: linear-gradient(
+    270deg,
+    var(--airplane-right-fill-color) 0%,
+    rgba(163, 57, 227, 0) 100%
+  );
   opacity: 0.5;
 
   margin-right: -15px;
