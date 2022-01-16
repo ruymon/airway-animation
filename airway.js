@@ -13,9 +13,9 @@ const defaultConfig = {
 const customConfig = {
     colorFromLeft: '#a339e3',
     colorFromRight: '#2ec662',
-    resizable: false,
+    resizable: true,
     log: true,
-    lazy: false,
+    lazy: true,
 }
 
 function executeAirplanes(container, userConfig = {}) {
@@ -98,19 +98,19 @@ function executeAirplanes(container, userConfig = {}) {
     function log(msg, type) {
         if (!config.log) return;
 
-        switch (type) {
-            case 'info':
-                console.info(msg);
-                break;
-            case 'warn':
-                console.warn(msg);
-                break;
-            case 'error':
-                console.error(msg);
-                break;
-            default:
-                console.log(msg);
-        };
+        const types = {
+            'info': () => console.info(msg),
+            'warn': () => console.warn(msg),
+            'error': () => console.error(msg),
+        }
+
+        if (!types[type]) {
+          return types[type]
+        }
+
+        console.log(message);
     };
 
-}; executeAirplanes(wrapper, customConfig);
+};
+
+executeAirplanes(wrapper, customConfig);
