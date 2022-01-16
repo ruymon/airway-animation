@@ -2,7 +2,7 @@
   width: 100%;
   height: 0px;
 
-  background: url("../assets/airway_grid_8x8.svg") repeat;
+  background: url('../assets/airway_grid_8x8.svg') repeat;
 
   overflow: hidden;
 }

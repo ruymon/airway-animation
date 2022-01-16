@@ -12,11 +12,11 @@ Idea:
 
 ```js
 const config = {
-  maxLimit: "container",
-  background: "transparent",
+  maxLimit: 'container',
+  background: 'transparent',
   resizable: true,
-  colorFromLeft: "#a339e3",
-  colorFromRight: "#2ec662",
+  colorFromLeft: '#a339e3',
+  colorFromRight: '#2ec662',
 };
 ```
 
@@ -24,26 +24,26 @@ Types Schema \*\*[DONE]:
 
 ```ts
 interface configTypes {
-  maxLimit: "container" | number;
-  background: "transparent" | string;
+  maxLimit: 'container' | number;
+  background: 'transparent' | string;
   resizable: true | false;
-  colorFromLeft: string[] | string | "random";
-  colorFromRight: string[] | string | "random";
+  colorFromLeft: string[] | string | 'random';
+  colorFromRight: string[] | string | 'random';
 }
 ```
 
 How it should look in a React Project:
 
 ```jsx
-import React from "react";
-import AirwayAnimation from "airway-animation";
+import React from 'react';
+import AirwayAnimation from 'airway-animation';
 
 const config = {
-  maxLimit: "container",
-  background: "transparent",
+  maxLimit: 'container',
+  background: 'transparent',
   resizable: true,
-  colorFromLeft: "#a339e3",
-  colorFromRight: "#2ec662",
+  colorFromLeft: '#a339e3',
+  colorFromRight: '#2ec662',
 };
 
 function sampleData() {

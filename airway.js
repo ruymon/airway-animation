@@ -1,10 +1,10 @@
 const defaultConfig = {
-  height: "130",
+  height: '130',
   lazy: true,
-  background: "",
+  background: '',
   resizable: false,
-  colorFromLeft: "blue",
-  colorFromRight: "red",
+  colorFromLeft: 'blue',
+  colorFromRight: 'red',
   log: false,
 };
 
@@ -28,13 +28,13 @@ class Airway {
     if (!this.config.log) return;
 
     switch (type) {
-      case "info":
+      case 'info':
         console.info(msg);
         break;
-      case "warn":
+      case 'warn':
         console.warn(msg);
         break;
-      case "error":
+      case 'error':
         console.error(msg);
         break;
       default:
@@ -54,20 +54,20 @@ class Airway {
     this.container.style.background = this.config.background;
     this.container.style.height = `${this.config.height}px`;
 
-    if (this.config.resizable) this.container.style.resize = "vertical";
+    if (this.config.resizable) this.container.style.resize = 'vertical';
 
     document.documentElement.style.setProperty(
-      "--airplane-left-fill-color",
-      this.config.colorFromLeft
+      '--airplane-left-fill-color',
+      this.config.colorFromLeft,
     );
     document.documentElement.style.setProperty(
-      "--airplane-right-fill-color",
-      this.config.colorFromRight
+      '--airplane-right-fill-color',
+      this.config.colorFromRight,
     );
   }
 
   generateAirplane() {
-    const randomClass = Math.random() < 0.5 ? "airplaneRight" : "airplaneLeft";
+    const randomClass = Math.random() < 0.5 ? 'airplaneRight' : 'airplaneLeft';
     const randomPlane = `
         <div class="${randomClass} airplaneContent">
             <div class="airplaneLine"></div>
@@ -77,16 +77,16 @@ class Airway {
         </div>
         `;
 
-    this.container.insertAdjacentHTML("beforeend", randomPlane);
+    this.container.insertAdjacentHTML('beforeend', randomPlane);
   }
 
   clearAirplanes(maxLimit) {
-    const airplanesFlying = this.container.querySelectorAll(".airplaneContent");
+    const airplanesFlying = this.container.querySelectorAll('.airplaneContent');
 
     airplanesFlying.forEach((airplane, index) => {
       if (index > maxLimit - 1) {
         airplane.remove();
-        this.log("Airplane removed");
+        this.log('Airplane removed');
       }
     });
   }
@@ -96,14 +96,14 @@ class Airway {
       ? getRandomSeconds(3, 6)
       : getRandomSeconds(0, 0);
     const airplaneCount =
-      this.container.querySelectorAll(".airplaneContent").length;
+      this.container.querySelectorAll('.airplaneContent').length;
 
     const containerHeightLimit = this.container.offsetHeight;
     const airplaneCountLimit = Math.floor(containerHeightLimit / 32);
 
     this.log(
       `INFO: This container fits: ${airplaneCountLimit} airplane(s) and currently we have: ${airplaneCount} airplane(s) flying!`,
-      "warn"
+      'warn',
     );
 
     if (airplaneCount >= airplaneCountLimit) {
@@ -117,7 +117,7 @@ class Airway {
     if (airplaneCount < airplaneCountLimit)
       this.myInterval = setInterval(() => this.updateTimeout.call(this), time);
     else {
-      this.log("INFO: Airplane limit reached!", "info");
+      this.log('INFO: Airplane limit reached!', 'info');
     }
   }
 
@@ -140,10 +140,10 @@ class Airway {
 /**
  * Client Code
  */
-const myAirway = new Airway("#airwayGrid", {
-  height: "200",
-  colorFromLeft: "#a339e3",
-  colorFromRight: "#2ec662",
+const myAirway = new Airway('#airwayGrid', {
+  height: '200',
+  colorFromLeft: '#a339e3',
+  colorFromRight: '#2ec662',
   resizable: false,
   lazy: false,
 });
