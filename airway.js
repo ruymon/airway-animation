@@ -1,9 +1,9 @@
 const wrapper = document.getElementById('airwayGrid');
 
 const defaultConfig = {
-    height: '130',
+    height: 130,
     lazy: true,
-    background: '',
+    backgroundColor: '',
     resizable: false,
     colorFromLeft: 'blue',
     colorFromRight: 'red',
@@ -11,7 +11,6 @@ const defaultConfig = {
 };
 
 const customConfig = {
-    height: '200',
     colorFromLeft: '#a339e3',
     colorFromRight: '#2ec662',
     resizable: false,
@@ -22,7 +21,7 @@ const customConfig = {
 function executeAirplanes(container, userConfig = {}) {
     const config = { ...defaultConfig, ...userConfig };
     (function initConfig() {
-        container.style.background = config.background;
+        container.style.background = config.backgroundColor;
         container.style.height = `${config.height}px`;
 
         if (config.resizable) container.style.resize = 'vertical';
